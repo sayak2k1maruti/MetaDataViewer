@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { NavigationContainer } from "@react-navigation/native";
+import MainNavigationStack from "./Route/Navigations";
+import { Image, View } from "react-native";
+import { useState } from "react";
+import { SplashContext } from "./Contexts/SplashContext";
 
 export default function App() {
+  const [splashStatus, setSplashStatus] = useState(true);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SplashContext.Provider value={{ setSplashStatus: setSplashStatus }}>
+      {splashStatus ? <Splash /> : ""}
+      <NavigationContainer>
+        <MainNavigationStack />
+        <StatusBar style="auto" />
+      </NavigationContainer>
+    </SplashContext.Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Splash = () => (
+  <View
+    style={{
+      height: "100%",
+      width: "100%",
+      backgroundColor: "#CD5151",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <Image
+      style={{ width: 300, height: 300 }}
+      source={require("./assets/icons/splash.gif")}
+    />
+  </View>
+);

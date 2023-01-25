@@ -1,18 +1,19 @@
 {
   "expo": {
     "name": "MetaDataViewer",
-    "slug": "MetaDataViewer",
+    "slug": "meta-data-viewer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/app-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/7c0eb832-982c-4773-9e21-9b2dcb272af7"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -22,12 +23,21 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/app-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.sayak2k1.MDV"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7c0eb832-982c-4773-9e21-9b2dcb272af7"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
